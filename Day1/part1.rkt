@@ -1,3 +1,3 @@
 #lang racket
 
-(sum (file->list "input.txt"))
+(apply + (file->list "input.txt"))

@@ -7,10 +7,10 @@
     ;; are there any duplicates in our list of accumulated frequencies?
     (or (check-duplicates (reverse frequencies))
         ;; apply the given deltas to our frequencies
-        (helper (foldl (λ (delta deltas)
-                                 (cons (+ delta (first deltas)) deltas))
-                               frequencies
-                               deltas))))
+        (helper (foldl (λ (delta acc)
+                         (cons (+ delta (first acc)) acc))
+                       frequencies
+                       deltas))))
   (helper '(0)))
 
 (find-first-frequency-repeat (file->list "input.txt"))

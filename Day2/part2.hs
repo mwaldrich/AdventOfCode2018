@@ -28,10 +28,3 @@ pairs a = (foldr (++) [] (map (makePair a) a))
 makePair :: [a] -> a -> [(a, a)]
 makePair elems x = (zip elems (replicate (length elems) x))
 
--- makePair elems x = (map (\elem -> (elem, x)) elems)
-
--- diff [] [] = 0
--- diff (a:as) (b:bs) =
---   (diff as bs) + if (a == b) then 0 else 1
-
-  
